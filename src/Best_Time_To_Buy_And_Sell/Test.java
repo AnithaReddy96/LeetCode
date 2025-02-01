@@ -8,5 +8,8 @@ public class Test {
 
         int[] days = Solution.buyDayAndSellDay(new int[]{7,1,5,3,6,4});
         System.out.println(days[0]+" "+days[1]);
+
+
+
     }
 }
