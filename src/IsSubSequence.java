@@ -1,4 +1,3 @@
-package Is_Subsequence;
 /*
 Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
 
@@ -16,7 +15,7 @@ Input: s = "axc", t = "ahbgdc"
 Output: false
 
  */
-public class Solution {
+public class IsSubSequence {
     public static boolean isSubsequence(String s, String t){
         int left =0;
         int right =0;

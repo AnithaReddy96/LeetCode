@@ -1,5 +1,3 @@
-package Integer_TO_Roman;
-
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -64,7 +62,7 @@ Constraints:
 
 1 <= num <= 3999
  */
-public class Solution {
+public class IntegerToRoman {
 
     public static String integerToRoman(int number){
         StringBuilder roman = new StringBuilder();

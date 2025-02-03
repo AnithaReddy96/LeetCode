@@ -1,4 +1,3 @@
-package Best_Time_To_Buy_And_Sell2;
 /*
 You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
 
@@ -34,7 +33,7 @@ Constraints:
 0 <= prices[i] <= 104
 
  */
-public class Solution {
+public class BestTimeToBuyAndSell2 {
 
     public static int bestTimeToSell2(int[] prices){
         int minPrice = prices[0];

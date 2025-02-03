@@ -1,3 +1,6 @@
+import java.util.Arrays;
+
+/*
 You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 
 Merge nums1 and nums2 into a single array sorted in non-decreasing order.
@@ -34,3 +37,49 @@ nums2.length == n
 0 <= m, n <= 200
 1 <= m + n <= 200
 -109 <= nums1[i], nums2[j] <= 109
+ */
+public class MergeSortedArray {
+
+    public static void mergeSort(int[] numbers){
+        if(numbers.length==1)
+            return;
+        int middle = numbers.length/2;
+        int[] left = new int[middle];
+        int[] right = new int[numbers.length-middle];
+
+        for (int i =0;i<middle;i++){
+            left[i] = numbers[i];
+        }
+        for (int i = middle;i<numbers.length;i++){
+            right[i-middle]=numbers[i];
+        }
+
+        mergeSort(left);
+        mergeSort(right);
+
+        merge(left,right,numbers);
+    }
+
+    private static void merge(int[] left, int[] right, int[] numbers) {
+        int i=0,j=0,k=0;
+
+        while(i<left.length && j< right.length){
+            if(left[i]<right[j]){
+                numbers[k++]=left[i++];
+            }else
+                numbers[k++]=right[j++];
+        }
+
+        while(i<left.length)
+            numbers[k++]=left[i++];
+        while(j<right.length)
+            numbers[k++]=right[j++];
+
+    }
+    public static void main(String[] args) {
+
+        int[] numbers = new int[]{1,2,3,2,4,6,0,5,9,3,8};
+        MergeSortedArray.mergeSort(numbers);
+        System.out.println(Arrays.toString(numbers));
+    }
+}

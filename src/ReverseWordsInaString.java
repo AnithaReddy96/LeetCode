@@ -1,4 +1,3 @@
-package Reverse_words_in_a_string;
 /*Given an input string s, reverse the order of the words.
 
 A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
@@ -30,7 +29,7 @@ Constraints:
 1 <= s.length <= 104
 s contains English letters (upper-case and lower-case), digits, and spaces ' '.
 There is at least one word in s.*/
-public class Solution {
+public class ReverseWordsInaString {
 
     public static String reverseWords(String str){
         String[] words = str.trim().split("\\s+");

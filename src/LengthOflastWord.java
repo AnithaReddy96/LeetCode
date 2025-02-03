@@ -1,4 +1,3 @@
-package Length_of_last_word;
 /*
 * Given a string s consisting of words and spaces, return the length of the last word in the string.
 
@@ -29,7 +28,7 @@ Constraints:
 s consists of only English letters and spaces ' '.
 There will be at least one word in s.
 */
-public class Solution {
+public class LengthOflastWord {
     public static int lengthOfLastWord(String str){
         String[] words = str.trim().split("\\s+");
         return words[words.length-1].length();

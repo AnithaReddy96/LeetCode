@@ -1,5 +1,3 @@
-package Roman_to_Integer;
-
 import java.util.HashMap;
 
 /*
@@ -47,7 +45,7 @@ Constraints:
 s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 It is guaranteed that s is a valid roman numeral in the range [1, 3999].
  */
-public class Solution {
+public class RomanToInteger {
     public static int romanToInteger(String roman){
         HashMap<Character,Integer> map = new HashMap<>();
         map.put('M',1000);

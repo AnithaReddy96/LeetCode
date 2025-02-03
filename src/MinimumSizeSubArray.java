@@ -1,4 +1,3 @@
-package Mininum_Size_Sub_Array;
 /*
 Given an array of positive integers nums and a positive integer target, return the minimal length of a
 subarray
@@ -28,7 +27,7 @@ Constraints:
 1 <= nums[i] <= 104
 
  */
-public class Solution {
+public class MinimumSizeSubArray {
     public static int minSubArray(int[] nums,int target){
         int left=0;
         int minLength = Integer.MAX_VALUE;

@@ -1,5 +1,3 @@
-package ThreeSum;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,7 +36,7 @@ Constraints:
 3 <= nums.length <= 3000
 -105 <= nums[i] <= 105
  */
-public class Solution {
+public class ThreeSum {
 
     public static List<List<Integer>> threeSum(int[] numbers){
         List<List<Integer>> res = new ArrayList<>();

@@ -1,8 +1,42 @@
-package TwoSum;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
-import java.util.*;
+/*
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
-public class TwoSumUtil {
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+Example 2:
+
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+Example 3:
+
+Input: nums = [3,3], target = 6
+Output: [0,1]
+
+
+Constraints:
+
+2 <= nums.length <= 104
+-109 <= nums[i] <= 109
+-109 <= target <= 109
+Only one valid answer exists.
+
+
+Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+ */
+public class TwoSum {
 
 
     public static int[] twoSumSimple(int[] nums, int target){
@@ -83,4 +117,25 @@ public class TwoSumUtil {
 
     }
 
+    public static void main(String[] args) {
+
+
+        int[] nums = {4,6,9,3,2,9,2,8};
+        int target = 11;
+        int[] res = TwoSum.twoSumSimple(nums,target);
+        System.out.println(res[0]+" "+res[1]);
+
+        int[] res2 = TwoSum.twoSimpleHashMap(nums,target);
+        System.out.println(res2[0]+" "+res2[1]);
+
+        List<int[]> allPairs = TwoSum.findAllPairs(nums,target);
+        for(int[] pair: allPairs) {
+            System.out.println(pair[0] + " " + pair[1]);
+        }
+
+        List<List<Integer>> result = TwoSum.findAllPairsHashMap(nums,target);
+        System.out.println("*************************************");
+        for(List<Integer> list: result)
+            System.out.println(list.get(0)+" "+list.get(1));
+    }
 }

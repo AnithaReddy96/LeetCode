@@ -1,5 +1,3 @@
-package Longest_SubString_Without_Repeating_Characters;
-
 import java.util.HashSet;
 
 /*Given a string s, find the length of the longest
@@ -24,7 +22,7 @@ Input: s = "pwwkew"
 Output: 3
 Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.*/
-public class Solution {
+public class LongestSubstringWithoutRepeatingCharacters {
     public static int lengthOfLongestSubString(String str){
         int left =0;
         int maxLength=0;

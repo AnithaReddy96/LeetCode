@@ -1,6 +1,4 @@
-package Best_Time_To_Buy_And_Sell;
-
-public class Solution {
+public class BestTimeToBuyAndSell {
 /*You are given an array prices where prices[i] is the price of a given stock on the ith day.
 
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
@@ -62,4 +60,15 @@ Constraints:
         return buyAndSell;
     }
 
+    public static void main(String[] args) {
+
+        int maxprofit = BestTimeToBuyAndSell.maxProfit(new int[]{7,1,5,3,6,4});
+        System.out.println(maxprofit);
+
+        int[] days = BestTimeToBuyAndSell.buyDayAndSellDay(new int[]{7,1,5,3,6,4});
+        System.out.println(days[0]+" "+days[1]);
+
+
+
+    }
 }
