@@ -1,7 +1,8 @@
 package Streams;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.Comparator;
+import java.util.*;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -24,11 +25,19 @@ public class GroupingAndPartitioning {
 
         //Group Employees by Department
 
-        Map<String, List<Employee>> collect = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.toList()));
+        Map<String, List<Employee>> collect = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
         collect.forEach((dept,emps)-> {
             System.out.println("Department:"+dept +" emps:"+ emps);
         });
 
+        // Sort Employees by City
+
+        Map<String, List<Employee>> employeesByCity = employees.stream()
+                .sorted(Comparator.comparing(Employee::getCity).thenComparing(Employee::getName)).collect(Collectors.groupingBy(Employee::getCity,LinkedHashMap::new,Collectors.toList()));
+
+        employeesByCity.forEach((city,emps)->{
+            System.out.println("City: "+city +" emps: "+emps);
+        });
         //Partition Numbers into Even and Odd
         List<Integer> numbers = Arrays.asList(2,5,9,7,4,0);
         Map<Boolean, List<Integer>>  evenAndOdd = numbers.stream().collect(Collectors.partitioningBy(n -> n % 2 == 0));
