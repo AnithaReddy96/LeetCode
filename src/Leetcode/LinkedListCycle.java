@@ -1,3 +1,5 @@
+package Leetcode;
+
 public class LinkedListCycle {
 
     // Definition for singly-linked list.
