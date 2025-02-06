@@ -1,10 +1,13 @@
 package Threads;
 
 public class MyTaskRunnable implements Runnable{
+    Count count;
+
+    public MyTaskRunnable(Count count){
+        this.count = count;
+    }
     @Override
     public void run() {
-        for(int i =0;i<=5;i++){
-            System.out.println("Executing thread in MyTaskRunnable in "+ Thread.currentThread().getName());
-        }
+        count.increment();
     }
 }

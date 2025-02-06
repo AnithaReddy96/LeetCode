@@ -10,8 +10,8 @@ There are 2 basic ways and 3 advanced ways to create a Thread in Java
 
 1. By Extending a Thread Class
 2. By Implementing a Runnable Interface
-3. Using ExecutorService
-4. Using Callable Interface
+3. Using Callable and Future
+4. Using ExecutorService
 5. ForkJoinPool (for parallelism)
 
 ## Points to remember while creating Thread
@@ -25,6 +25,16 @@ There are 2 basic ways and 3 advanced ways to create a Thread in Java
 
 ### 2. By Implementing Runnable interface
 --> you must implement run method
+#### Key Points:
+- Extending Thread: Limits flexibility since Java doesn't support multiple inheritance.
+
+- Implementing Runnable: Preferred approach as it allows extending other classes and is more flexible.
+
+- Lambda Expressions: Simplifies code when using Runnable.
+### 3. By using Callable and Future
+
+
+
 
    
 

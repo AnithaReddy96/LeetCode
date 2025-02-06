@@ -1,11 +1,20 @@
 package Threads;
 
 public class MyTask extends Thread{
+    Count count ;
 
+    public MyTask(Count count){
+        this.count=count;
+    }
     @Override
     public void run(){
-        for(int i=0;i<=5;i++) {
-            System.out.println("Extended Thread Class in MyTask running in a "+ Thread.currentThread().getName());
+
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
+
+        count.increment();
     }
 }

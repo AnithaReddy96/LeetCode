@@ -1,5 +1,7 @@
 package Leetcode;
 
+import java.util.LinkedList;
+
 public class LinkedListCycle {
 
     // Definition for singly-linked list.
@@ -12,7 +14,7 @@ public class LinkedListCycle {
             this.next = null;
         }
     }
-
+LinkedList<Character> ch = new LinkedList<>();
     /**
      * Detects if a linked list has a cycle.
      *
