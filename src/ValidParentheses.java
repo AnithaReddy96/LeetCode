@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class ValidParentheses {
@@ -16,6 +17,7 @@ public class ValidParentheses {
 
             }
         }
+
         return stack.isEmpty();
     }
 

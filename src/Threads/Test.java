@@ -2,19 +2,27 @@ package Threads;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class Test {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
 
         ExecutorService execute = Executors.newFixedThreadPool(10);
 
         Count count = new Count();
+        MyCallable callabletask = new MyCallable(count);
+        Future<Integer> submit = null;
+        for(int i =0;i<5;i++){
+            submit = execute.submit(callabletask);
+        }
+      //  System.out.println(submit.get());
       //  MyTask task1 = new MyTask(count);
-        MyTaskRunnable task = new MyTaskRunnable(count);
+      /*  MyTaskRunnable task = new MyTaskRunnable(count);
         for(int i=0;i<100000;i++){
-        execute.submit(task);}
+        execute.submit(task);}*/
 
    /* List<MyTask> tasks = new ArrayList<>();
         for(int i=0;i<100000;i++){
@@ -32,7 +40,7 @@ public class Test {
         });*/
 
       //  Thread.sleep(10000);
-        System.out.println("main"+count.getNum());
+    //    System.out.println("main"+count.getNum());
 
         execute.shutdown();
 

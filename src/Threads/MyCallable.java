@@ -10,7 +10,6 @@ public class MyCallable implements Callable<Integer> {
     }
     @Override
     public Integer call() throws Exception {
-        count.increment();
         return count.increment();
     }
 }
