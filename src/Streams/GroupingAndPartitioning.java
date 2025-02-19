@@ -31,7 +31,7 @@ public class GroupingAndPartitioning {
             System.out.println("Department:"+dept +" emps:"+ emps);
         });*/
 
-        // Sort Employees by City
+        // Sort Employees by City and name
 
         Map<String, List<Employee>> employeesByCity = employees.stream()
                 .sorted(Comparator.comparing(Employee::getCity).thenComparing(Employee::getName)).collect(Collectors.groupingBy(Employee::getCity,LinkedHashMap::new,Collectors.toList()));
