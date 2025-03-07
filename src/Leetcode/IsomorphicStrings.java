@@ -55,7 +55,7 @@ public class IsomorphicStrings {
             s_map.putIfAbsent(s.charAt(i),i);
             t_map.putIfAbsent(t.charAt(i),i);
 
-            if(!Objects.equals(s_map.get(s.charAt(i)), t_map.get(t.charAt(i)))){
+            if(s_map.get(s.charAt(i))!=t_map.get(t.charAt(i))){
                 return false;
             }
         }

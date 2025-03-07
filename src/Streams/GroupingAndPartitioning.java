@@ -30,6 +30,19 @@ public class GroupingAndPartitioning {
       /*  collect.forEach((dept,emps)-> {
             System.out.println("Department:"+dept +" emps:"+ emps);
         });*/
+        //avg salary of employee in each dept
+
+        employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment
+                        ,Collectors.averagingDouble(Employee::getSalary))).forEach((dept,avgsalary)->{
+                    System.out.println("Department "+dept +"AvgSalary :"+avgsalary);
+                });
+
+        // top3 salaried employee in each dept
+
+        employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,
+                        Collectors.collectingAndThen(Collectors.toList(), list-> list.stream().sorted(
+                                Comparator.comparingDouble(Employee::getSalary).reversed()).limit(3).collect(Collectors.toList()))));
 
         // Sort Employees by City and name
 
@@ -39,6 +52,7 @@ public class GroupingAndPartitioning {
        /* employeesByCity.forEach((city,emps)->{
             System.out.println("City: "+city +" emps: "+emps);
         });*/
+
 
         //Find Employees in a City
         employees.stream().collect(Collectors.groupingBy(Employee::getCity));
